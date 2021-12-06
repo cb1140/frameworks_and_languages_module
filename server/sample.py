@@ -1,4 +1,8 @@
 import falcon
+import json
+
+from wsgiref import simple_server
+from dataStore import ITEMS
 
 class QuoteResource:
     def on_get(self, req, resp):
@@ -13,7 +17,23 @@ class QuoteResource:
 
         resp.media = quote
 
+
+
+
+
+
+class ItemResource:
+    def on_get(self, req, resp):
+        """Handles GET request """
+        if req.get_param("user_id"):
+            resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
+        
+        resp.status = falcon.HTTP_200
+        resp.content_type = falcon.MEDIA_JSON
+
 api = falcon.API()
+app = application = falcon.App()
+app.add_route('/get', ItemResource())
 api.add_route('/quote', QuoteResource())
 
 
