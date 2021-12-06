@@ -16,25 +16,44 @@ class QuoteResource:
         }
 
         resp.media = quote
+api.add_route('/quote', QuoteResource())
+api = falcon.API()
 
 
 
 
-
-
-class ItemResource:
+class GetResource:
     def on_get(self, req, resp):
         """Handles GET request """
-        if req.get_param("user_id"):
+        if req.get_param("id"):
             resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
         
         resp.status = falcon.HTTP_200
         resp.content_type = falcon.MEDIA_JSON
 
-api = falcon.API()
+class PostResource:
+    def on_post(self, req, resp):
+        """Handles POST request """
+
+        resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
+        resp.status = falcon.HTTP_200
+        resp.content_type = falcon.MEDIA_JSON
+
+
+class DeleteResource:
+    def on_delete(self, req, resp):
+        """Handles DELETE request """
+        resp.media = req.media
+        resp.status = falcon.HTTP_200
+        resp.content_type = falcon.MEDIA_JSON
+
+
+
+
 app = application = falcon.App()
-app.add_route('/get', ItemResource())
-api.add_route('/quote', QuoteResource())
+app.add_route('/post', PostResource())
+app.add_route('/get', GetResource())
+api.add_route('/delete', DeleteResource())
 
 
 
