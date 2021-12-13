@@ -6,11 +6,7 @@ body {
     justify-content: center;
   }
   
-  main {
-    width: clamp(45ch, 50%, 75ch);
-    display: flex;
-    flex-direction: column;
-  }
+ 
   
   textarea {
       transition: .2s;
@@ -24,4 +20,9 @@ body {
   
   button {
     margin: 0 0 0 auto;
+  }
+
+ 
+  div {
+   padding: 25px;
   }
