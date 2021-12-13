@@ -27,9 +27,8 @@ class GetResource:
         """Handles GET request """
         if req.get_param("id"):
             resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
-        
-        resp.status = falcon.HTTP_200
-        resp.content_type = falcon.MEDIA_JSON
+            resp.status = falcon.HTTP_200
+            resp.content_type = falcon.MEDIA_JSON
 
 
         if not user_id:
