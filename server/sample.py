@@ -31,6 +31,19 @@ class GetResource:
         resp.status = falcon.HTTP_200
         resp.content_type = falcon.MEDIA_JSON
 
+
+        if not user_id:
+            resp.status = falcon.HTTP_204  
+        elif not keywords:
+            resp.status = falcon.HTTP_204
+        elif not description:
+            resp.status = falcon.HTTP_204
+        elif not lat:
+            resp.status = falcon.HTTP_204
+        elif not lon:
+            resp.status = falcon.HTTP_204
+          
+
 class PostResource:
     def on_post(self, req, resp):
         """Handles POST request """
