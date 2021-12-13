@@ -3,41 +3,49 @@
 <head>
   <title>My first Vue app</title>
   <link rel="stylesheet" href="vue.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-
+  <script src="https://unpkg.com/vue@next"></script>
   
   </style>
 </head>
 
 <body>
   
+  <br>
   <div class="Freecycle">
+    <h2>Freecycle</h2>
+    <form> 
+       <!---Username Textbox --->
+       <label for="uname">Username:</label><br>
+       <input type="text" id="fname" name="fname"><br>
 
-    <!---Username Textbox --->
-    <label for="uname">Username:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-
-    <!--- Latitude Textbox --->
-   <label for="laname">Latitude:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
+       <!--- Latitude Textbox --->
+       <label for="laname">Latitude:</label><br>
+       <input type="text" id="lname" name="lname"><br>
  
-   <!--- Longitude Textbox --->
-   <label for="loname">Longitude:</label><br>
-    <input type="text" id="fname" name="fname"><br>
+       <!--- Longitude Textbox --->
+       <label for="loname">Longitude:</label><br>
+       <input type="text" id="fname" name="fname"><br>
 
-   <!--- Image Textbox --->
-   <label for="imgname">Image:</label><br>
-   <input type="text" id="fname" name="fname"><br>
+       <!--- Image Textbox --->
+       <label for="imgname">Image:</label><br>
+       <input type="text" id="fname" name="fname"><br>
 
-   <!--- Keywords Textbox --->
-   <label for="keyname">Keywords:</label><br>
-   <input type="text" id="fname" name="fname"><br>
+       <!--- Keywords Textbox --->
+       <label for="keyname">Keywords:</label><br>
+       <input type="text" id="fname" name="fname"><br>
+       <br>
+       
 
-   <!--- Description Textbox --->
-   <label for="desc">Description:</label>
-   <textarea id="desc" name="desc" rows="2" cols="50">
-  
-   </textarea>
+       <!--- Description Textbox --->
+       <label for="desc">Description:</label><br>
+       <textarea id="desc" name="desc" rows="2" cols="50">
+       </textarea><br>
+
+       <br>
+
+       <input type="submit" value="Submit">
+    </form>
+   
   </div>
  
 
