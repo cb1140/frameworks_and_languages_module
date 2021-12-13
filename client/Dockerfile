@@ -1,4 +1,4 @@
 FROM alpine
-RUN npm i hyperapp-form
-COPY hyperapp.html .
+RUN npm install -g @vue/cli
+COPY vue.html .
 CMD ["python3", "-m", "http.server", "8001"]
