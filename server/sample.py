@@ -75,9 +75,10 @@ class DeleteResource:
 
 
 app = application = falcon.App()
-app.add_route('/post/item', PostResource())
 app.add_route('/item/{itemId}/', GetResource())
-api.add_route('/delete', DeleteResource())
+app.add_route('/items/', GetManyResource())
+app.add_route('/item/', PostResource())
+api.add_route('/item/{itemId}/', DeleteResource())
 
 
 
