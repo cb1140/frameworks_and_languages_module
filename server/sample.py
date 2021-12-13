@@ -42,13 +42,20 @@ class GetResource:
         elif not lon:
             resp.status = falcon.HTTP_204
           
+class GetManyResource():
+   def on_get(self,req, resp):
+       
+            resp.status= falcon.HTTP_200
+            resp.content_type = falcon.MEDIA_JSON
+            pass
 
 class PostResource:
     def on_post(self, req, resp):
         """Handles POST request """
 
+
         resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
-        resp.status = falcon.HTTP_200
+        resp.status = falcon.HTTP_201
         resp.content_type = falcon.MEDIA_JSON
 
 
