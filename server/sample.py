@@ -19,6 +19,9 @@ class QuoteResource:
 api.add_route('/quote', QuoteResource())
 api = falcon.API()
 
+"""Enable CORS policy for example.com and allows credentials"""
+app = falcon.App(middleware=falcon.CORSMiddleware(
+    allow_origins='example.com', allow_credentials='*'))
 
 
 
@@ -30,18 +33,20 @@ class GetResource:
             resp.status = falcon.HTTP_200
             resp.content_type = falcon.MEDIA_JSON
 
+            fields = set(("user_id","keywords","description", "lat", "lon"))
 
-        if not user_id:
-            resp.status = falcon.HTTP_204  
-        elif not keywords:
-            resp.status = falcon.HTTP_204
-        elif not description:
-            resp.status = falcon.HTTP_204
-        elif not lat:
-            resp.status = falcon.HTTP_204
-        elif not lon:
-            resp.status = falcon.HTTP_204
-          
+        """Returns right HTTP protocol if items cannot be found"""
+        if ITEMS.keys != fields:
+            resp.status = HTTP_204
+        else:
+            ITEMS[new_id] = req.json
+            ITEMS.add()
+            resp.status = falcon.HTTP_201
+
+
+
+
+        
 class GetManyResource():
    def on_get(self,req, resp):
        
