@@ -8,5 +8,5 @@ test:
 	docker run --rm ${DOCKER_IMAGE}
 
 run:
-	docker run --rm -it --publish 8000:8000 ${DOCKER_IMAGE}
+	docker run --rm -it --publish 8001:8001 ${DOCKER_IMAGE}
 	python -m http.server
