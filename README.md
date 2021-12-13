@@ -31,6 +31,3 @@ Setup
 
 * Browser
 	* Allow popups for `https://gitpod.io`
-
-
-HEllo!
