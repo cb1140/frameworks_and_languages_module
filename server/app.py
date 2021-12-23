@@ -1,6 +1,8 @@
+"""Importing modules"""
 import falcon
 import json
 
+from falcon.http_status import HTTPStatus
 from wsgiref import simple_server
 from datastore import ITEMS
 
@@ -12,7 +14,7 @@ class RootResource():
             pass
 
 class GetResource:
-    def on_get(self, req, resp):
+    def on_get(self, req, resp, itemId):
         """Handles GET request """
         if req.get_param("id"):
             resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
@@ -21,7 +23,7 @@ class GetResource:
 
         
 class GetManyResource():
-   def on_get(self,req, resp):
+   def on_get(self, req, resp, itemId): 
             """Handles GET MANY request """
             resp.status= falcon.HTTP_200
             resp.content_type = falcon.MEDIA_JSON
