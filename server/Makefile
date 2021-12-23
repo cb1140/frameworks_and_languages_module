@@ -3,6 +3,9 @@ DOCKER_IMAGE:=server
 run_local:
 	python3 sample.py
 
+#test_locally:
+#	pytest
+
 
 build:
 	docker build --tag ${DOCKER_IMAGE} .
