@@ -70,8 +70,8 @@ class PostResource:
             ITEMS.add()
             resp.status = falcon.HTTP_201
 
-
-app = application = falcon.API(middleware=[HandleCORSResource()]) # Replaces old CORS block
+#replaces old CORS block
+app = application = falcon.API(middleware=[HandleCORSResource()])
 app.add_route('/item/{itemId}/', GetResource())
 app.add_route('/items/', GetManyResource())
 app.add_route('/item/', PostResource())
