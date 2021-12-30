@@ -10,8 +10,10 @@ class RootResource():
    def on_get(self,req, resp):
             """Handles main server request to pass test"""
             resp.status= falcon.HTTP_200
-            resp.content_type = falcon.MEDIA_JSON
+            resp.text = "I love this assignment so much."
+            resp.content_type = 'text/html'
             pass
+            
 
 class GetResource:
     def on_get(self, req, resp, itemId):
@@ -46,7 +48,7 @@ class PostResource:
             resp.status = falcon.HTTP_201
 
 
-class DeleteResource:
+class DeleteResource: 
     def on_delete(self, req, resp):
         """Handles DELETE request """
         resp.media = req.media
