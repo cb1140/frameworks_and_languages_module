@@ -6,7 +6,7 @@ from falcon.http_status import HTTPStatus
 from wsgiref import simple_server
 from datastore import ITEMS
 
-class HandleCORS(object):
+class HandleCORSResource(object):
     def process_request(self, req, resp):
         resp.set_header('Access-Control-Allow-Origin', '*')
         resp.set_header('Access-Control-Allow-Methods', 'POST')
@@ -74,7 +74,7 @@ class DeleteResource:
         resp.content_type = falcon.MEDIA_JSON
 
 
-app = application = falcon.App(middleware=[HandleCORS()]) # Replaces old CORS block
+app = falcon.API(middleware=[HandleCORSResource()]) # Replaces old CORS block
 app.add_route('/item/{itemId}/', GetResource())
 app.add_route('/items/', GetManyResource())
 app.add_route('/item/', PostResource())
