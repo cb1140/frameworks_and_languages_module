@@ -1,22 +1,4 @@
-"""Test data from Freecycle spec below """
-
-
-
-
-ITEMS = {
-    1: {
-        "id": 1,
-        "user_id": "user1234",
-        "keywords": ["hammer", "nails", "tools"],
-        "description": "A hammer and nails set",
-        "lat": "-11.05011",
-        "lon": "92.19302",
-        "date_from": "2021-12-22T08:22:39.067408",
-        "date_to": "2021-12-22T08:22:39.067408",
-
-        
-    }
-}
+ITEMS = {}
 
 class DataStorePythonDic():
     def __init__(self, items):

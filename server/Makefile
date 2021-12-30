@@ -1,7 +1,8 @@
 DOCKER_IMAGE:=server
 
 run_local:
-	python3 app.py
+	python3 sample.py
+
 
 build:
 	docker build --tag ${DOCKER_IMAGE} .
