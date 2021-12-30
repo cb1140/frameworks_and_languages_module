@@ -6,6 +6,17 @@ from falcon.http_status import HTTPStatus
 from wsgiref import simple_server
 from datastore import ITEMS
 
+class HandleCORS(object):
+    def process_request(self, req, resp):
+        resp.set_header('Access-Control-Allow-Origin', '*')
+        resp.set_header('Access-Control-Allow-Methods', '*')
+        resp.set_header('Access-Control-Allow-Headers', 'Content-Type')
+        resp.set_header('Access-Control-Max-Age', 1728000)
+        resp.text = "I love this assignment so much."
+        resp.content_type = 'text/html'
+        if req.method == 'OPTIONS':
+            raise HTTPStatus(falcon.HTTP_204, body='\n')
+
 class RootResource():
    def on_get(self,req, resp):
             """Handles main server request to pass test"""
@@ -14,6 +25,8 @@ class RootResource():
             resp.content_type = 'text/html'
             pass
             
+
+ 
 
 class GetResource:
     def on_get(self, req, resp, itemId):
@@ -56,11 +69,7 @@ class DeleteResource:
         resp.content_type = falcon.MEDIA_JSON
 
 
-"""Enable CORS policy for example.com and allows credentials"""
-app = falcon.App(middleware=falcon.CORSMiddleware(
-    allow_origins='example.com', allow_credentials='*'))
-
-app = application = falcon.App()
+app = application = falcon.App(middleware=[HandleCORS()]) # Replaces old CORS block
 app.add_route('/item/{itemId}/', GetResource())
 app.add_route('/items/', GetManyResource())
 app.add_route('/item/', PostResource())
