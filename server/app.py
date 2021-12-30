@@ -71,14 +71,6 @@ class PostResource:
             resp.status = falcon.HTTP_201
 
 
-class DeleteResource: 
-    def on_delete(self, req, resp):
-        """Handles DELETE request """
-        resp.media = req.media
-        resp.status = falcon.HTTP_200
-        resp.content_type = falcon.MEDIA_JSON
-
-
 app = application = falcon.API(middleware=[HandleCORSResource()]) # Replaces old CORS block
 app.add_route('/item/{itemId}/', GetResource())
 app.add_route('/items/', GetManyResource())
