@@ -9,20 +9,19 @@ from datastore import ITEMS
 class HandleCORS(object):
     def process_request(self, req, resp):
         resp.set_header('Access-Control-Allow-Origin', '*')
-        resp.set_header('Access-Control-Allow-Methods', '*')
+        resp.set_header('Access-Control-Allow-Methods', 'POST')
         resp.set_header('Access-Control-Allow-Headers', 'Content-Type')
         resp.set_header('Access-Control-Max-Age', 1728000)
         resp.text = "I love this assignment so much."
         resp.content_type = 'text/html'
         if req.method == 'OPTIONS':
-            raise HTTPStatus(falcon.HTTP_204, body='\n')
+            raise HTTPStatus(falcon.HTTP_204, text='\n')
 
 class RootResource():
    def on_get(self,req, resp):
             """Handles main server request to pass test"""
-            resp.status= falcon.HTTP_200
-            resp.text = "I love this assignment so much."
-            resp.content_type = 'text/html'
+            resp.status= falcon.HTTP_204
+            resp.content_type = falcon.MEDIA_JSON
             
             
 
