@@ -40,6 +40,11 @@ class GetResource:
             resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
             resp.status = falcon.HTTP_200
             resp.content_type = falcon.MEDIA_JSON
+    def on_delete(self, req, resp):
+        """Handles DELETE request """
+        resp.media = req.media
+        resp.status = falcon.HTTP_200
+        resp.content_type = falcon.MEDIA_JSON
 
         
 class GetManyResource():
@@ -74,20 +79,18 @@ class DeleteResource:
         resp.content_type = falcon.MEDIA_JSON
 
 
-app = falcon.API(middleware=[HandleCORSResource()]) # Replaces old CORS block
+app = application = falcon.API(middleware=[HandleCORSResource()]) # Replaces old CORS block
 app.add_route('/item/{itemId}/', GetResource())
 app.add_route('/items/', GetManyResource())
 app.add_route('/item/', PostResource())
-app.add_route('/item/{itemId}/', DeleteResource())
 app.add_route('/', RootResource())
 
 
 if __name__ == '__main__':
 
-    from wsgiref import simple_server
-    httpd = simple_server.make_server("0.0.0.0", 8000, app)
+    server = simple_server.make_server("0.0.0.0", 8000, app)
     try:
         
-        httpd.serve_forever()
+        server.serve_forever()
     except KeyboardInterrupt:
         pass
