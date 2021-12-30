@@ -23,10 +23,16 @@ class RootResource():
             resp.status= falcon.HTTP_200
             resp.text = "I love this assignment so much."
             resp.content_type = 'text/html'
-            pass
+            
             
 
- 
+class OptionsResource():
+   def on_options(self,req, resp):
+            """Handles Option Request"""
+            resp.status= falcon.HTTP_204
+            resp.content_type = falcon.MEDIA_JSON
+            
+            
 
 class GetResource:
     def on_get(self, req, resp, itemId):
