@@ -1,7 +1,7 @@
 DOCKER_IMAGE:=server
 
 run_local:
-	python3 sample.py
+	python3 app.py
 
 #test_locally:
 #	pytest

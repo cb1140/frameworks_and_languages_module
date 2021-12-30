@@ -13,7 +13,7 @@ class HandleCORSResource(object):
         resp.set_header('Access-Control-Allow-Headers', 'Content-Type')
         resp.set_header('Access-Control-Max-Age', 1728000)
         resp.text = "I love this assignment so much."
-        resp.content_type = 'text/html'
+        resp.content_type = "text/html"
         if req.method == 'OPTIONS':
             raise HTTPStatus(falcon.HTTP_204, text='\n')
 
