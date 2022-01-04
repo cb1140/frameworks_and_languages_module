@@ -9,7 +9,7 @@ class RootResource():
    def on_get(self,req, resp):
             """Handles main server request to pass test"""
             resp.status= falcon.HTTP_200
-            resp.content_type = falcon.MEDIA_JSON
+            resp.content_type = "text/html"
 
             
 
@@ -69,9 +69,9 @@ class HandleCORSResource(object):
             raise HTTPStatus(falcon.HTTP_204, text='\n')
 
 app = application = falcon.API(middleware=[HandleCORSResource()])
-app.add_route('/item/{itemId}/', GetResource())
-app.add_route('/items/', GetManyResource())
-app.add_route('/item/', PostResource())
+app.add_route('/item/{itemId}', GetResource())
+app.add_route('/items', GetManyResource())
+app.add_route('/item', PostResource())
 app.add_route('/', RootResource())
 
 
