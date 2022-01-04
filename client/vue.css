@@ -1,8 +1,9 @@
 
 body {
     display: flex;
-    font-size: 1.5em;
+    font-size: 15px;
     justify-content: center;
+    
   }
 
   
@@ -26,7 +27,7 @@ body {
   }
 
   input {
-    padding: 5px 5px;
+    padding: 15px 15px;
     font-size: 15px;
     text-align: center;
     cursor: pointer;
@@ -36,6 +37,8 @@ body {
     border: none;
     border-radius: 5px;
     box-shadow: 0 3px #999;
+    font-family: times new roman;
+    font-weight: 500;
   }
 
   input:hover {
@@ -48,7 +51,7 @@ body {
   }
 
   textarea {
-    padding: 5px 5px;
+    padding: 15px 15px;
     font-size: 15px;
     text-align: center;
     cursor: pointer;
@@ -61,7 +64,8 @@ body {
   }
 
   textarea:hover {
-    background-color: #888}
+    background-color: #888;
+  }
 
     textarea:active {
     background-color: #888;
