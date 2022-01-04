@@ -1,8 +1,11 @@
 
+/* Main Formatting CSS*/
+
 body {
     display: flex;
     font-size: 15px;
     justify-content: center;
+    font-size:10vw; /* Responsive Scaling Text Size */
     
   }
 
@@ -20,15 +23,15 @@ body {
   button {
     margin: 0 0 0 auto;
   }
-
  
   div {
    padding: 25px;
+   font-size:10vw; /* Responsive Scaling Text Size */
   }
 
   input {
     padding: 15px 15px;
-    font-size: 15px;
+    font-size: 15px, 10vw; /* Responsive Scaling Text Size */
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -39,7 +42,12 @@ body {
     box-shadow: 0 3px #999;
     font-family: times new roman;
     font-weight: 500;
+    
   }
+
+
+
+  /* Hover Shadow Animation CSS */
 
   input:hover {
     background-color: #888}
