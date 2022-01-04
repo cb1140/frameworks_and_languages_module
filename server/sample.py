@@ -1,9 +1,10 @@
 import falcon
 import json
+import datetime
 
 from falcon.http_status import HTTPStatus
 from wsgiref import simple_server
-from datastore import ITEMS
+from datastore import *
 
 class RootResource():
    def on_get(self,req, resp):
@@ -37,10 +38,11 @@ class GetManyResource():
 class PostResource:
     def on_post(self, req, resp):
         """Handles POST request """
-
+        """Creating new dictionary NewData """
         NewData = {}
         NewData = req.get_media()
 
+        """Creating Date From and To """
         date_from = datetime.datetime.now()
         date_to = datetime.datetime.now()
 
@@ -48,40 +50,25 @@ class PostResource:
         resp.media = {'id' : newId}
 
         RequiredFields = set({'user_id', 'keywords', 'description', 'lat', 'lon'})
-        NewFields = set(inputdata.keys)
+        NewFields = set(NewData.keys())
 
         if(NewFields.issubset(RequiredFields)):
-            inputdata['date_from'] = date_from.strftime
-            inputdata['date_to'] = date_to.strftime
-            inputdata['id'] = newId
+            NewData['date_from'] = date_from.strftime
+            NewData['date_to'] = date_to.strftime
+            
+            datastore.create_item(NewData)
 
-
-            datastore.create_item(inputdata)
             resp.media = {'id': newId}
             resp.content_type = "application/json"
             resp.status = falcon.HTTP_201
         else:
             resp.status = falcon.HTTP_405
-            
-
-
-
-
-
-        user_data = req.media
-        
+    
+        #user_data = req.media
         #resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
-        resp.status = falcon.HTTP_201
-        resp.content_type = falcon.MEDIA_JSON
-        fields = set(("user_id","keywords","description", "lat", "lon"))
-
-        """Returns right HTTP protocol if items cannot be found"""
-        if ITEMS.keys != fields:
-            resp.status = HTTP_204
-        else:
-            ITEMS[new_id] = req.json
-            ITEMS.add()
-            resp.status = falcon.HTTP_201
+        #resp.status = falcon.HTTP_201
+        #resp.content_type = falcon.MEDIA_JSON
+        #fields = set(("user_id","keywords","description", "lat", "lon"))
 
         
 
@@ -94,13 +81,13 @@ class OptionsResource():
 
 
 class HandleCORSResource(object):
-    def process_request(self, req, resp):
+    def process_resource(self, req, resp, resource, req_succeeded):
         resp.set_header('Access-Control-Allow-Origin', '*')
         resp.set_header('Access-Control-Allow-Methods', 'POST')
         resp.set_header('Access-Control-Allow-Headers', 'Content-Type')
         resp.set_header('Access-Control-Max-Age', 1728000)
-        resp.text = "I love this assignment."
-        resp.content_type = "text/html"
+        #resp.text = "I love this assignment."
+        #resp.content_type = "text/html"
         if req.method == 'OPTIONS':
             raise HTTPStatus(falcon.HTTP_204, text='\n')
 
