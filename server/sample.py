@@ -49,7 +49,17 @@ class PostResource:
 
         RequiredFields = set({'user_id', 'keywords', 'description', 'lat', 'lon'})
         NewFields = set(inputdata.keys())
-        
+
+        if(NewFields.issubset(RequiredFields)):
+            inputdata['date_from'] = date_from.strftime
+            inputdata['date_to'] = date_to.strftime
+            datastore.create_item(inputdata)
+            resp.status = falcon.HTTP_200
+            resp.content_type = "application/json"
+        else:
+            resp.status = falcon.HTTP_405
+            
+
 
 
 
