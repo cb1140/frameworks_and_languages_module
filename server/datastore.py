@@ -1,4 +1,18 @@
-ITEMS = {}
+ITEMS = {
+    0: {
+        "id": 0,
+        "user_id": "user1234",
+        "keywords": ["hammer", "nails", "tools"],
+        "description": "A hammer and nails set",
+        "lat": (random.random() * (70*2)) - 70,
+        "lon": (random.random() * (180*2)) - 180,
+        "date_from": "2021-11-22T08:22:39.067408",
+        "date_to": "2021-11-22T08:22:39.067408",
+
+        
+    }
+}
+
 
 class DataStorePythonDic():
     def __init__(self, items):

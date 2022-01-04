@@ -14,13 +14,13 @@ class RootResource():
             
 
 class GetResource:
-    def on_get(self, req, resp):
+    def on_get(self, req, resp, itemId):
         """Handles GET request """
-        if req.get_param("id"):
+        if req.get_param("itemId"):
             resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
             resp.status = falcon.HTTP_200
             resp.content_type = falcon.MEDIA_JSON
-    def on_delete(self, req, resp):
+    def on_delete(self, req, resp, id):
         """Handles DELETE request """
         resp.media = req.media
         resp.status = falcon.HTTP_200
@@ -37,6 +37,10 @@ class GetManyResource():
 class PostResource:
     def on_post(self, req, resp):
         """Handles POST request """
+        user_data = req.media
+
+
+
         resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
         resp.status = falcon.HTTP_201
         resp.content_type = falcon.MEDIA_JSON
