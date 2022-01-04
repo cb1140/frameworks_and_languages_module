@@ -37,15 +37,31 @@ class GetManyResource():
 class PostResource:
     def on_post(self, req, resp):
         """Handles POST request """
+
+        NewData = {}
+        NewData = req.get_media()
+
+        date_from = datetime.datetime.now()
+        date_to = datetime.datetime.now()
+
+        newId = max(ITEMS.keys()) + 1
+        resp.media = {'id' : newId}
+
+        RequiredFields = set({'user_id', 'keywords', 'description', 'lat', 'lon'})
+        NewFields = set(inputdata.keys())
+        
+
+
+
+
+
         user_data = req.media
-
-
-
-        resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
+        
+        #resp.media = {"id" : ITEMS.id, 'user_id' : ITEMS.user_id, 'description' : ""}
         resp.status = falcon.HTTP_201
         resp.content_type = falcon.MEDIA_JSON
-
         fields = set(("user_id","keywords","description", "lat", "lon"))
+
         """Returns right HTTP protocol if items cannot be found"""
         if ITEMS.keys != fields:
             resp.status = HTTP_204
@@ -53,6 +69,9 @@ class PostResource:
             ITEMS[new_id] = req.json
             ITEMS.add()
             resp.status = falcon.HTTP_201
+
+        
+
 
 class OptionsResource():
    def on_options(self,req, resp):
