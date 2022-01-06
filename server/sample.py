@@ -17,15 +17,29 @@ class RootResource():
 class GetResource:
     def on_get(self, req, resp, itemId):
         """Handles GET request """
-        if req.get_param("itemId"):
-            resp.media = {'user_id': "", "keywords":"","description": "", "lat": "" , "lon": "" }
+        FetchedItems = datastore.get_item(itemId)
+        
+        if not FetchedItems:
+            resp.status = falcon.HTTP_404
+
+        else:
             resp.status = falcon.HTTP_200
             resp.content_type = falcon.MEDIA_JSON
-    def on_delete(self, req, resp, id):
+            resp.media = FetchedItems
+
+
+    def on_delete(self, req, resp, itemId):
         """Handles DELETE request """
-        resp.media = req.media
-        resp.status = falcon.HTTP_200
-        resp.content_type = falcon.MEDIA_JSON
+        FetchedItems = datastore.get_item(itemId)
+        
+        if not FetchedItems:
+            resp.status = falcon.HTTP_404
+
+        else:
+            resp.status = falcon.HTTP_201
+            resp.media = FetchedItems
+            datastore.delete_item(itemId)
+
 
         
 class GetManyResource():
