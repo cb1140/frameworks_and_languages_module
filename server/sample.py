@@ -11,9 +11,17 @@ class RootResource():
             """Handles main server request to pass test"""
             resp.status= falcon.HTTP_200
             resp.content_type = "text/html"
+            resp.text = "Hoovers were originally horse-drawn."
+            print("GET /","-", resp.status)
+
+   def on_options(self,req, resp):
+            """Handles Option Request"""
+            resp.status= falcon.HTTP_204
+            resp.content_type = "text/html" 
+            resp.set_header = ('Access-Control-Allow-Methods', 'POST')
+            print("OPTIONS /", "-", resp.status)
 
             
-
 class GetResource:
     def on_get(self, req, resp, itemId):
         """Handles GET request """
@@ -87,11 +95,7 @@ class PostResource:
         
 
 
-class OptionsResource():
-   def on_options(self,req, resp):
-            """Handles Option Request"""
-            resp.status= falcon.HTTP_204
-            resp.content_type = "text/html"           
+          
 
 
 class HandleCORSResource(object):
