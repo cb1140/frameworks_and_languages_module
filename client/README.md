@@ -9,6 +9,14 @@ This is the Client Side folder. Inside contains:
 
 The main index file has been built with HTML and JavaScript, using the Vue framework.
 
+## Configuration
+
+In order to run the client files locally for HTML viewing, run:
+
+```bash
+python3 -m http.server 8001
+```
+
 ## Testing
 
 In order to run the Cypress tests, run the following command:

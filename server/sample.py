@@ -157,6 +157,7 @@ class HandleCORSResource(object):
         
 
 """api routes"""
+
 app = application = falcon.App(middleware=[HandleCORSResource()])
 app.add_route('/item/{itemId}', GetResource())
 app.add_route('/items', GetManyResource())

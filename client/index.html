@@ -7,7 +7,7 @@
   <!--- VUE Javascript --->
   <script src="https://unpkg.com/vue@next"></script>
   <!--- Responsive Viewing --->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
   
   </style>
 </head>
@@ -19,19 +19,19 @@
     <h1>Freecycle</h1> <p style="color:red">&#x1F4CD;</p>
     <form> 
       <!--- Name Textbox --->
-      <label for="name">Username:</label><br>
+      <label for="name" v-model.trim="msg">Username:</label><br>
       <input type="text" id="create_user_id" name="user_id"br>
       <br>
        <!--- Keywords Textbox --->
-       <label for="keywords">Keywords:</label><br>
+       <label for="keywords" v-model.trim="msg">Keywords:</label><br>
        <input type="text" id="create_keywords" name="keywords"><br>
        <br>
        <!--- Latitude Textbox --->
-       <label for="lat">Latitude:</label><br>
+       <label for="lat" v-model.trim="msg">Latitude:</label><br>
        <input type="text" id="create_lat" name="lat"><br>
        <br>
        <!--- Longitude Textbox --->
-       <label for="lon">Longitude:</label><br>
+       <label for="lon" v-model.trim="msg">Longitude:</label><br>
        <input type="text" id="create_lon" name="lon"><br>
        <br>
        <!--- Image Textbox --->
@@ -39,7 +39,7 @@
        <input type="text" id="create_image" name="image"><br>
        <br>
        <!--- Description Textbox --->
-       <label for="description">Description:</label><br>
+       <label for="description" v-model.trim="msg">Description:</label><br>
        <textarea id="create_description" name="description" rows="1" cols="50">
        </textarea><br>
 
@@ -51,40 +51,40 @@
    
   </div>
 
-  <div class="Delete " id="delete data">
+   <!---<div class="Delete " id="delete data">
     <h1>Get Item</h1> <p style="color:red">&#x1F4CD;</p>
     <form> 
-      <!--- Name Textbox --->
+      
       <label for="name">Item ID :</label><br>
       <input type="text" id="item_id" name="item_id"br>
       <br>
       
 
        <br>
-       <!--- Submit Button  --->
+       
        <input type="submit" style="color:black"  value="submit" visible>
     </form>
 
    
-  </div>
 
 
-  <div class="Get " id="get data">
+
+    <div class="Get " id="get data">
     <h1>Get Item</h1> <p style="color:red">&#x1F4CD;</p>
     <form> 
-      <!--- Name Textbox --->
+      
       <label for="name">Item ID :</label><br>
       <input type="text" id="item_id" name="item_id"br>
       <br>
       
 
        <br>
-       <!--- Submit Button  --->
+       
        <input type="submit" style="color:black"  value="submit" visible>
     </form>
 
    
-  </div>
+  </div> --->
  
 </body>
 </html>
