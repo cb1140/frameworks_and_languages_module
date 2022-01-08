@@ -13,25 +13,37 @@
 </head>
 
 <body>
-  
+  <!--- Main Title with excessive breaklines --->  
   <br>
   <div class="Freecycle" id="main">
-    <h1>Freecycle</h1> <p style="color:red">&#x1F4CD;</p>
+    <ul><li><p style="font-size:50px; color:red;">&#x1F4CD; <b style="font-size:40px;color:black;">Freecycle</b></p>
+    </li></ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--- Main Input Form for GET --->  
     <form> 
       <!--- Name Textbox --->
-      <label for="name" v-model.trim="msg">Username:</label><br>
+      <label for="name">Username:</label><br>
       <input type="text" id="create_user_id" name="user_id"br>
       <br>
        <!--- Keywords Textbox --->
-       <label for="keywords" v-model.trim="msg">Keywords:</label><br>
+       <label for="keywords">Keywords:</label><br>
        <input type="text" id="create_keywords" name="keywords"><br>
        <br>
        <!--- Latitude Textbox --->
-       <label for="lat" v-model.trim="msg">Latitude:</label><br>
+       <label for="lat">Latitude:</label><br>
        <input type="text" id="create_lat" name="lat"><br>
        <br>
        <!--- Longitude Textbox --->
-       <label for="lon" v-model.trim="msg">Longitude:</label><br>
+       <label for="lon">Longitude:</label><br>
        <input type="text" id="create_lon" name="lon"><br>
        <br>
        <!--- Image Textbox --->
@@ -39,13 +51,13 @@
        <input type="text" id="create_image" name="image"><br>
        <br>
        <!--- Description Textbox --->
-       <label for="description" v-model.trim="msg">Description:</label><br>
-       <textarea id="create_description" name="description" rows="1" cols="50">
+       <label for="description">Description:</label><br>
+       <textarea id="create_description" name="description" rows="2" cols="50">
        </textarea><br>
 
        <br>
        <!--- Submit Button  --->
-       <input type="submit" id="action_create" data-action="create_item" style="color:black"  value="submit" visible>
+       <input type="submit" id="action_create" data-action="create_item" style="color:black; font-size: 25px; font-family: 'Orienta', sans-serif;"  value="Submit" visible>
     </form>
 
    

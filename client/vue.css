@@ -1,81 +1,116 @@
 
-/* Main Formatting CSS*/
-
 body {
-    display: flex;
-    font-size: 15px;
-    justify-content: center;
-    
-    
-  }
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  
+}
 
-  
-  textarea {
-    transition: .2s;
-    resize: none;
-    overflow: hidden;
-  }
-  
-  section {
-    display: flex;
-  }
-  
-  button {
-    margin: 0 0 0 auto;
-  }
+p {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+
+}
+
+h2 {
+  margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    font-family: 'Orienta', sans-serif;
+}
+
+
+textarea {
+  transition: .2s;
+  resize: none;
+  overflow: hidden;
+}
+
+section {
+  display: flex;
+}
+
+button {
+  margin: 0 0 0 auto;
+}
+
+
+div {
  
-  div {
-   padding: 25px;
-   
-  }
+}
 
-  input {
-    padding: 15px 15px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #bebace;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 3px #999;
-    font-family: times new roman;
-    font-weight: 50;
-    
-  }
+label {
+  font-family: 'Orienta', sans-serif;
+  font-size: 25px;
+  font-style: bold;
+  line-height: 40px;
 
 
+}
 
-  /* Hover Shadow Animation CSS */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+  
+  
+}
 
-  input:hover {
-    background-color: #888}
+li {
+  float: left;
+}
 
-  input:active {
-    background-color: #888;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+input {
+  padding: 15px 15px;
+  font-size: 15px;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #bebace;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+  font-weight: 50;
+  font-family: 'Orienta', sans-serif;
+  font-size: 15px;
+  font-style: bold;
+  line-height: 10px;
+}
 
-  textarea {
-    padding: 15px 15px;
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #bebace;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 3px #999;
-  }
+input:hover {
+  background-color: #888}
 
-  textarea:hover {
-    background-color: #888;
-  }
+input:active {
+  background-color: #888;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
-    textarea:active {
-    background-color: #888;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+textarea {
+  padding: 15px 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #bebace;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+}
+
+textarea:hover {
+  background-color: #888;
+}
+
+  textarea:active {
+  background-color: #888;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
