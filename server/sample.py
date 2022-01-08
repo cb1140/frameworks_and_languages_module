@@ -148,22 +148,22 @@ class PostResource:
 
           
 
-
+"""adding new HTTP headers"""
 class HandleCORSResource(object):
     def process_request(self, req, resp):
         resp.set_header('Access-Control-Allow-Origin', '*')
         resp.set_header('Access-Control-Allow-Methods', 'POST')
         resp.set_header('Access-Control-Allow-Headers', 'Content-Type')
-        resp.set_header('Access-Control-Max-Age', 1728000)
         
 
-
+"""api routes"""
 app = application = falcon.App(middleware=[HandleCORSResource()])
 app.add_route('/item/{itemId}', GetResource())
 app.add_route('/items', GetManyResource())
 app.add_route('/item', PostResource())
 app.add_route('/', RootResource())
 
+"""Allan's cool code snippet, don't touch"""
 
 if __name__ == '__main__':
 
