@@ -64,7 +64,7 @@ This folder and its contents should be used for server testing according to the 
 
 ## Authors and acknowledgment
 
-Forked from the [Caladees Frameworks and Languages module Repo](https://github.com/calaldees/frameworks_and_languages_module).
+Forked from the [Caladees Frameworks and Languages Repo](https://github.com/calaldees/frameworks_and_languages_module).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
