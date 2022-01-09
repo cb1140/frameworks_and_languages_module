@@ -1,3 +1,6 @@
+
+# All my comments are in """these""" as the original Falcon API example comments
+# were in quotations, and I wanted to keep the reoccuring theme as I developed
 """Importing libraries"""
 """By default Falcon only enables handlers for JSON and HTML"""
 import falcon

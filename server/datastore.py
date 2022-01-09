@@ -1,12 +1,12 @@
 import random
-
+# array
 ITEMS = {
     0: {
         "id": 0,
         "user_id": "user1234",
         "keywords": ["hammer", "nails", "tools"],
         "description": "A hammer and nails set",
-        "lat": (random.random() * (70*2)) - 70, #Generating random Lat Lon as previous static data wasn't accurate
+        "lat": (random.random() * (70*2)) - 70, # Generating random Lat Lon as previous static data wasn't accurate
         "lon": (random.random() * (180*2)) - 180,
         "date_from": "2021-11-22T08:22:39.067408",
         "date_to": "2021-11-22T08:22:39.067408",
@@ -15,7 +15,7 @@ ITEMS = {
     }
 }
 
-
+# Dictionary to store items in 
 class DataStorePythonDic():
     def __init__(self, items):
         self.items = items or {}
