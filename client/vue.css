@@ -11,6 +11,7 @@ p {
   font-size: 16px;
   line-height: 1.4;
   text-align: justify;
+  font-size:0.5vw /* RESPONSIVE VIEWING WIDTH TEXT */
   
 
 }
@@ -22,6 +23,7 @@ h2 {
     font-size: 15px;
     line-height: 43px;
     font-family: 'Orienta', sans-serif;
+    
 }
 
 /* Description box CSS /w active and hover classes */
@@ -68,6 +70,7 @@ label {
   font-size: 25px;
   font-style: bold;
   line-height: 20px;
+  
 
 
 }
