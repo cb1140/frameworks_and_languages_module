@@ -6,6 +6,7 @@ This is the Client Side folder. Inside contains:
 -  vue.css
 -  Makefile
 -  Dockerfile
+-  package.json
 
 The main index file has been built with HTML and JavaScript, using the Vue framework.
 
