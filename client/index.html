@@ -5,8 +5,12 @@
   <!--- Stylesheet Ref --->  
   <link rel="stylesheet" href="vue.css">
   <!--- VUE Javascript --->
-  <script src="https://unpkg.com/vue@next"></script>
-  <!--- Responsive Viewing --->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/@vue-formily/formily@latest"></script>
+
+
+  <!--- My JS --->
+  <script src="app.js"></script>
  
   
   </style>
@@ -16,6 +20,7 @@
   <!--- Main Title with excessive breaklines --->  
   <br>
   <div class="Freecycle" id="main">
+    
     <ul><li><p style="font-size:50px; color:red;">&#x1F4CD; <b style="font-size:40px;color:black;">Freecycle</b></p>
     </li></ul>
     <br>
@@ -28,11 +33,11 @@
     <br>
     <br>
     <br>
-    <!--- Main Input Form for GET --->  
-    <form> 
+    <!--- Main Input Form --->
+    <form id="app"> 
       <!--- Name Textbox --->
       <label for="name">Username:</label><br>
-      <input type="text" id="create_user_id" name="user_id"br>
+      <input type="text" id="create_user_id" name="user_id"><br>
       <br>
        <!--- Keywords Textbox --->
        <label for="keywords">Keywords:</label><br>
@@ -52,16 +57,20 @@
        <br>
        <!--- Description Textbox --->
        <label for="description">Description:</label><br>
-       <textarea id="create_description" name="description" rows="2" cols="50">
+       <textarea v-model="message" id="create_description" name="description" rows="2" cols="50" placeholder="Add Description Here. . ."></textarea>
        </textarea><br>
+
+       
 
        <br>
        <!--- Submit Button  --->
-       <input type="submit" id="action_create" data-action="create_item" style="color:black; font-size: 25px; font-family: 'Orienta', sans-serif;"  value="Submit" visible>
+       <input type="submit" id="action_create" data-action="create_item" style="color:black; font-size: 25px; font-family: 'Orienta', sans-serif;"  value="Submit">
     </form>
-
    
+    
   </div>
+
+  
 
    <!---<div class="Delete " id="delete data">
     <h1>Get Item</h1> <p style="color:red">&#x1F4CD;</p>
