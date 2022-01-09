@@ -18,8 +18,8 @@ h2 {
   margin: 1em 0 0.5em 0;
     color: #343434;
     font-weight: normal;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 15px;
+    line-height: 43px;
     font-family: 'Orienta', sans-serif;
 }
 
@@ -47,7 +47,7 @@ label {
   font-family: 'Orienta', sans-serif;
   font-size: 25px;
   font-style: bold;
-  line-height: 40px;
+  line-height: 20px;
 
 
 }
